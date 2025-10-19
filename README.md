@@ -36,20 +36,52 @@ Diff = A ⊕ B ⊕ Bin
 
 Borrow out = A'Bin + A'B + BBin
 
-**Truthtable**
 
 **Procedure**
+Step1: Define the specifications and initialize the design.
+Step2: Declare the name of the entity and architecture by using VHDL source code.
+Step3: Write the source code in VERILOG.
+Step4: Check the syntax and debug the errors if found, obtain the synthesis report.
+Step5: Verify the output by simulating the source code.
+Step6: Write all possible combinations of input using the test bench.
+Step7: Obtain the place and route report
 
-Write the detailed procedure here
+
 
 **Program:**
 
-/* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
+/* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming.
+i)FULL ADDER
+
+module fa(a,b,cin,sum,carry);
+input a,b,cin;
+output sum,carry;
+assign sum=( (a ^ b)^cin);
+assign carry= ( (a & b)| ( cin &(a ^ b )));
+endmodule
+
+ii)FULL SUBTRACTOR
+
+module fs(a,b,bin,difference,borrow);
+input a,b,bin;
+output difference,borrow;
+assign difference= ( (a ^ b)^bin);
+assign borrow= ( ( ~a & b)| ( bin & (~(a ^ b ))));
+endmodule
+
+
+Developed by:Varsha M  RegisterNumber:25001006
 */
 
 **RTL Schematic**
+<img width="1920" height="1020" alt="Screenshot 2025-10-07 175535" src="https://github.com/user-attachments/assets/970a7fbb-deeb-4a75-ab64-106550f56518" />
+<img width="1920" height="1020" alt="Screenshot 2025-10-07 175944" src="https://github.com/user-attachments/assets/1a48a0ef-1060-4586-952d-1abf2889e4fa" />
+
 
 **Output Timing Waveform**
+<img width="1920" height="1020" alt="Screenshot 2025-10-07 175647" src="https://github.com/user-attachments/assets/7680cc57-41a1-45df-bd2c-05c8aaf9c585" />
+<img width="1920" height="1020" alt="Screenshot 2025-10-07 180050" src="https://github.com/user-attachments/assets/31751269-96bf-4759-b7f9-69be1ae01f5a" />
+
 
 **Result:**
 
